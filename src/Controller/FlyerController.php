@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-class FlyerController extends AbstractController
+class FlyerController extends AbstractFlyerController
 {
     CONST FILTERS_CONST = ["category","is_published"];
     /**
@@ -274,8 +274,6 @@ class FlyerController extends AbstractController
                     $result = new JsonResponse($serviceList, JsonResponse::HTTP_OK);
                 }
             }
-
-
 
         }catch (\Exception $e){
             $result = new JsonResponse($e->getMessage(), JsonResponse::HTTP_BAD_REQUEST);

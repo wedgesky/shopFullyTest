@@ -10,10 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9156377-7cc9-426f-b23c-3b86ec282dd3" name="Default Changelist" comment="First commit">
+    <list default="true" id="a9156377-7cc9-426f-b23c-3b86ec282dd3" name="Default Changelist" comment="Creato metodo per caricare dati tramite ID">
+      <change afterPath="$PROJECT_DIR$/src/Controller/AbstractFlyerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/FlyerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FlyerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HelloController.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +159,7 @@
       <option name="presentableId" value="Default" />
       <updated>1600720088094</updated>
       <workItem from="1600720089327" duration="3904000" />
-      <workItem from="1600770868920" duration="14139000" />
+      <workItem from="1600770868920" duration="15705000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1600801880752</created>
@@ -168,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600801880752</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Creato metodo per caricare dati tramite ID">
+      <created>1600805615040</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600805615040</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,17 +194,22 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
+    <MESSAGE value="Creato metodo per caricare dati tramite ID" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creato metodo per caricare dati tramite ID" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600722364786">
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600805899832">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1600722364786" />
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1600805899832" />
     <state width="415" height="450" key="DebuggerActiveHint" timestamp="1600803435049">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="415" height="450" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1600803435049" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1600805982399">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1600805982399" />
     <state width="1323" height="223" key="GridCell.Tab.0.bottom" timestamp="1600803366486">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -246,6 +258,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="223" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1600803366486" />
+    <state x="444" y="86" key="NewPhpClassDialog" timestamp="1600805876346">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="444" y="86" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1600805876346" />
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1600805806573">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1600805806573" />
     <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1600802753121">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
