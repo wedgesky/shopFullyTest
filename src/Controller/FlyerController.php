@@ -11,7 +11,7 @@ class FlyerController extends AbstractController
 {
     CONST FILTERS_CONST = ["category","is_published"];
     /**
-     * @Route("/flyers", name="flyers")
+     * @Route("/flyers")
      */
     public function index(Request $request)
     {
@@ -146,6 +146,117 @@ class FlyerController extends AbstractController
 
 
                         $rowAdded++;
+
+
+                    }
+                    $rowNo++;
+
+
+                }
+                fclose($fp);
+            }
+
+            if($result == null){
+                if(strlen($serviceList) == 0){
+                    $result = new JsonResponse("NO DATA FOUND", JsonResponse::HTTP_NOT_FOUND);
+                }else{
+                    $result = new JsonResponse($serviceList, JsonResponse::HTTP_OK);
+                }
+            }
+
+
+
+        }catch (\Exception $e){
+            $result = new JsonResponse($e->getMessage(), JsonResponse::HTTP_BAD_REQUEST);
+        } finally {
+            return  $result;
+        }
+    }
+
+    /**
+     * @Route("/flyers/{id}", requirements={"id"="\d+"})
+     */
+    public function showId($id, Request $request){
+        $result = null;
+        try{
+
+            $fields = $request->query->get('fields');
+
+            $rowNo = 0;
+            $fieldsRow = [];
+            $serviceList = null;
+
+
+            if(!isset($fields)){
+                $fields = [];
+            }else{
+                $fields = explode(',', $fields);
+            }
+
+            $file = $this->getParameter('file.data');
+
+            if ( $result == null and ($fp = fopen($file, "r")) !== FALSE) {
+                while (($row = fgetcsv($fp)) !== FALSE ) {
+                    $num = count($row);
+
+                    if($rowNo == 0){
+                        $numFields = count($fields);
+
+                        if($numFields == 0){
+                            for ($c=0; $c < $num; $c++) {
+                                array_push($fieldsRow, $c);
+
+                                $serviceList .= $row[$c].",";
+                            }
+                        }else{
+
+                            for ($i=0; $i < $numFields; $i++) {
+                                $found = false;
+
+                                for ($c=0; $c < $num; $c++) {
+                                    if($row[$c] == $fields[$i]){
+                                        array_push($fieldsRow, $c);
+
+                                        $found = true;
+                                    }
+                                }
+
+                                if(!$found){
+                                    $result = new JsonResponse("FIELD ".$fields[$i]. " NOT DEFINED", JsonResponse::HTTP_BAD_REQUEST);
+
+                                    break;
+                                }else{
+                                    $serviceList .= $fields[$i].",";
+                                }
+                            }
+                        }
+
+                        $serviceList = rtrim($serviceList,",")."\n";
+
+                    }else if($row[0]== $id) {
+                        $addRow = true;
+
+                        if($addRow){
+                            for ($c=0; $c < $num; $c++) {
+                                $add = false;
+
+
+                                if(count($fieldsRow)>0 ){
+                                    if (in_array($c,$fieldsRow)){
+                                        $add = true;
+                                    }
+                                }else{
+                                    $add = true;
+                                }
+
+                                if($add){
+                                    $serviceList.= $row[$c].",";
+
+                                }
+                            }
+
+                            $serviceList = rtrim($serviceList,",")."\n";
+                        }
 
 
                     }
